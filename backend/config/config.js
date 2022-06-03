@@ -1,11 +1,12 @@
 /* eslint-disable no-undef */
 const nodeServer = {
 	host: process.env.nodeServer_host || HOST,
-	port: process.env.PORT || process.env.nodeServer_port
+	port: process.env.PORT || process.env.nodeServer_port,
+	enviroment: process.env.NODE_ENV || 'development'
 };
 
 const mongoDb = {
-	uri: process.env.mongoDb_uriLocalhost || process.env.mongoDb_uriCloud,
+	uri: nodeServer.enviroment === 'production' ? process.env.mongoDb_uriCloud : process.env.mongoDb_uriLocalhost,
 	dbName: process.env.mongoDb_databaseName,
 	collTransactions: process.env.mongoDb_collectionTransactions,
 };
