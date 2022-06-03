@@ -14,10 +14,8 @@ async function getAllTransactions(req, res, next){
 }
 
 async function createNewTransaction(req, res, next) {
-	console.log(req.body);
 	const transaction = new Transaction({...req.body});
 	try {
-		console.log(transaction);
 		await transaction.addTransaction();
 		res.status(201).send({message: 'Transaction created'});
 		return;

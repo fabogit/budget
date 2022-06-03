@@ -6,7 +6,8 @@ const nodeServer = {
 };
 
 const mongoDb = {
-	uri: nodeServer.enviroment === 'production' ? process.env.mongoDb_uriCloud : process.env.mongoDb_uriLocalhost,
+	// uri: nodeServer.enviroment === 'production' ? process.env.mongoDb_uriCloud : process.env.mongoDb_uriLocalhost,
+	uri: process.env.mongoDb_uriCloud,
 	dbName: process.env.mongoDb_databaseName,
 	collTransactions: process.env.mongoDb_collectionTransactions,
 };
