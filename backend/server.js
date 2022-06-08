@@ -11,7 +11,7 @@ const app = express();
 
 app.use(logger('dev'));
 // allow js calls from f/end
-app.use(cors({ origin: node.host, credentials: true }));
+app.use(cors({ origin: `http://${node.host}:3000`, credentials: true }));
 // allow to parse JSON from ajax request
 app.use(express.json());
 
